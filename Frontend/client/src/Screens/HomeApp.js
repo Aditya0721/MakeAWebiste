@@ -1,39 +1,34 @@
-import React from "react";
-import { useEffect } from "react";
-import {useState} from "react";
-import {Button, MenuItem, Select} from '@mui/material'; 
+import React, { useEffect } from "react";
 import SiteHeader from "./SiteHeader";
+import Content from "./Content";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Home = (props) =>{
 
-    const [value, setValue] = useState("");
+    const navigate = useNavigate();
 
-    const onSelect = (e)=>{
-        setValue(e.target.value);
-    }
-
-    useEffect((e)=>{
-        console.log(value)
-    },[value])
-
+    useEffect(() => {
+      const handleBackButton = (event) => {
+        // Prevent the default back button behavior
+        console.log("back button clicked");
+        event.preventDefault();
+        // Programmatically navigate to the previous route
+        navigate(-1);
+      };
+  
+      // Add event listener for the popstate event
+      window.addEventListener('popstate', handleBackButton);
+  
+      // Clean up the event listener when the component unmounts
+      return () => {
+        window.removeEventListener('popstate', handleBackButton);
+      };
+    }, [navigate]);
+    
     return(
         <div className="Home">
             <SiteHeader></SiteHeader>
-            <div className="content">
-                <div className="category-list">
-                    <div className="label">Please select a category</div>
-                    <div className="list-container">
-                        <Select 
-                        className="list"
-                        id="list-container-select"
-                        value={value}
-                        onChange={onSelect}>
-                            <MenuItem className="list-item" value="Gym">Gym</MenuItem>
-                            <MenuItem className="list-item" value="Trnsportaion">Transportaion</MenuItem>
-                        </Select>
-                    </div>
-                </div>
-            </div>
+            <Outlet></Outlet>
         </div>
     )
 }
