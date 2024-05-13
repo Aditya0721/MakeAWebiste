@@ -1,0 +1,101 @@
+.content{
+    // height: calc(~"100% - @{site-header-height}");
+    height: 90%;
+    width: 100%;
+    background-color: #f8dac3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 24px;
+    .category-list{
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        .label{
+            font-size: 50px;
+            font-weight: bold;
+            text-decoration: underline #954f75;
+        }
+        .category-list-container{
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row;
+            gap: 24px;
+            padding: 24px;
+            flex-wrap: wrap;
+            .category-label{
+                width: max-content;
+                height: max-content;
+                padding: 10px;
+                border: 1px solid;
+                border-radius: 56px;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                cursor: pointer;
+                &:hover{
+                    box-shadow: 0 6px 14px 0 rgba(0,0,0,0.24);
+                }
+                .label{
+                    font-size: 24px; 
+                    font-weight: bold; 
+                    color: white;
+                    text-decoration: none;  
+                }
+                span{
+                    font-size: 16px; 
+                    font-weight: bold; 
+                    color: white;
+                    text-decoration: none;  
+                }            
+            }
+            .category-dropdown{
+                width: 400px;
+                height: 50px;
+                border: 1px solid #954f75;
+                font-family: mawfont-medium;
+                color: #954f75;
+                &.Mui-focused{
+                    .MuiOutlinedInput-notchedOutline{
+                        border: 2px solid #954f75;
+                    }
+                }
+            }
+        }
+        .clear-button{
+            height: 16px;
+            width: 16px;
+            position: relative;
+            left: -56px;
+            .clear-icon{
+                height: 16px;
+                width: 16px;
+            }
+        }
+    }
+    .category-page{
+        height: 90%;
+    }
+}
+.select-list-paper{
+    .select-list{
+        font-family: mawfont-bold;
+        color: #954f75;
+        padding: 0px;
+        .list-item{
+            height: 72px;
+            background: #f9f5ef;
+            &.Mui-selected{
+                background: #e6e6e4;
+            }
+            &:hover{
+                background: #98b6ec;
+            }
+        }
+    }
+}
