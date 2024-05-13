@@ -1,4 +1,5 @@
 let mode = "development";
+var path = require('path');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -7,7 +8,12 @@ if(process.env.NODE_ENV === "production"){
 }
 module.exports = {
     mode: mode,
-    
+    output: {
+        // ... other output configurations
+        path: path.resolve(__dirname, 'dist'),
+        filename: "main.js",
+        publicPath: '/',
+      },
     module:{
         rules:[
         {
@@ -36,5 +42,6 @@ module.exports = {
     devServer: {
       static: "./dist",
       hot: true,
+      historyApiFallback: true,
     },
   };
