@@ -16,9 +16,8 @@ const GymForm = () =>{
     }
 
     const handleSubmit = (e)=>{
-        const encodedData = encodeURIComponent(JSON.stringify(gymData));
-        const compressedData = Buffer.from(encodedData, 'base64');
-        navigate(`/template/gym/${compressedData}`);
+        const encodedData = btoa(JSON.stringify(gymData));
+        navigate(`/template/gym/${encodedData}`);
     }
     return(<div className="form">
         <FormControl className="form-field">
