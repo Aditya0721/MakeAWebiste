@@ -5,4 +5,49 @@
     font-family: mawfont-regular;
     color: #954f75;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 24px;
+}
+
+.color-palette{
+    width: 250px;
+    display: flex;
+    gap: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 32px;
+    .color-box{
+        height: 60px;
+        width: 60px;
+        cursor: pointer;
+        border-radius: 56px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+        position: relative;
+        overflow: hidden;
+    }
+    .color-box::before{
+        content: '';
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 60px;
+        width: 30px;
+        border-radius: 20%;
+        left: -25px;
+        transform: skewx(-30deg);
+    }
+    .color-box:hover::before{
+        animation: slide 3s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes slide {
+        0%,100%{
+            left: -25px;
+        }
+        50%{
+            left: 100%;
+        }
+    }
 }

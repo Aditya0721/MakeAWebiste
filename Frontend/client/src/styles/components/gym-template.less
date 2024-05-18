@@ -4,21 +4,34 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    flex-direction: column;
-    gap: 24px;
-    .gym-header{
-        height: 10%;
-        width: 100%;
-        border: 1px solid;
+    flex-direction: row;
+    box-sizing: border-box;
+    .template-styles{
+        width: 5%;
+        height: 100%;
     }
-    .gym-content{
-        height: 80%;
-        width: 100%;
-        border: 1px solid;
-    }
-    .gym-footer{
-        width: 10%;
-        width: 100%;
-        border: 1px solid;
+    .template-content{
+        height: 100%;
+        width: 95%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        gap: 24px;
+        .gym-header{
+            height: 10%;
+            width: 100%;
+            border: 1px solid;
+        }
+        .gym-content{
+            height: 80%;
+            width: 100%;
+            border: 1px solid;
+        }
+        .gym-footer{
+            width: 10%;
+            width: 100%;
+            border: 1px solid;
+        }
     }
 }
