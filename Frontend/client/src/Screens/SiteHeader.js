@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const SiteHeader = ()=>{
     return(
         <div className="site-header">
             <div className="title">
-                Title
+                MAKE A WEBSITE
             </div>
         </div>
     )

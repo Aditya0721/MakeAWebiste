@@ -7,7 +7,15 @@
     align-items: center;
     .title{
         font-family: mawfont-bold;
-        font-size: 24px;
+        font-size: 40px;
         color: #954f75;
+        transition: all 0.5s ease-in-out;
+        &.sticky{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            opacity: 0.5;
+            font-size: 24px;
+        }
     }
 }
