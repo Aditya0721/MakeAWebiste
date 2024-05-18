@@ -1,0 +1,44 @@
+.form{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8dac3;
+    .form-field{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .form-label{
+
+        }
+        .form-value{
+            input{
+                font-family: mawfont-regular;
+                color: #954f75;
+            }
+            .Mui-focused{
+                fieldset{
+                    border-width: 1px;
+                    border-color: black;
+                }
+            }
+        }
+    }
+    .create-button{
+        height: 40px;
+        width: max-content;
+        border-radius: 56px;
+        background-color: #d6d1f5;
+        padding: 32px;
+        color: inherit;
+        transition: all 0.5 ease-in-out;
+        &:hover{
+            background-color: #8dbd61;
+            color: white;
+        }
+    }
+}

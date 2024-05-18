@@ -23,7 +23,7 @@ const Content = ()=>{
     useEffect(()=>{
         console.log(value)
         if(value && value.toLowerCase()!=="upcoming categories"){
-            navigate(`/template/${value.toLowerCase()}`, {replace:true});
+            navigate(`/${value.toLowerCase()}-form`);
         }
         else{
             navigate(`/`, {replace:true});

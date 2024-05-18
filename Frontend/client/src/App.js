@@ -7,6 +7,7 @@ import GymTemplate from './Templates/Gym/GymTemplate';
 import TransportationTemplate from './Templates/Transportaion/TransportationTemplate';
 import Template from './Templates/Template';
 import Content from './Screens/Content';
+import GymForm from './Screens/GymForm';
 
 function App() {
 
@@ -16,11 +17,12 @@ function App() {
         <Route path='/' element={<Home/>}>
           <Route index element={<Content/>}></Route>
           <Route path='content' element={<Content/>}/>
-          <Route path='template' element={<Template/>}>
-            <Route path='gym' element={<GymTemplate/>}/>
+          <Route path='gym-form' element={<GymForm/>}/>
+        </Route>
+        <Route path='/template' element={<Template/>}>
+            <Route path='gym/:gymdata' element={<GymTemplate/>}/>
             <Route path='transportation' element={<TransportationTemplate/>}/>
           </Route>
-        </Route>
       </Routes>
     </BrowserRouter>
 
